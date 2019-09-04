@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0CC22B3D7992CB0854EF5E57 /* Pods_NoomStateMachines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0838B1A786C760A30AB645A5 /* Pods_NoomStateMachines.framework */; };
+		2C2C3737231EDA0F0029816F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C3736231EDA0F0029816F /* Article.swift */; };
+		2CE53A1E231ECF1000B3EF19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE53A1D231ECF1000B3EF19 /* AppDelegate.swift */; };
+		2CE53A20231ECF1000B3EF19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE53A1F231ECF1000B3EF19 /* ViewController.swift */; };
+		2CE53A25231ECF1100B3EF19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE53A24231ECF1100B3EF19 /* Assets.xcassets */; };
+		2CE53A28231ECF1100B3EF19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE53A26231ECF1100B3EF19 /* LaunchScreen.storyboard */; };
+		2CE53A30231ED6E000B3EF19 /* articles.json in Resources */ = {isa = PBXBuildFile; fileRef = 2CE53A2F231ED6E000B3EF19 /* articles.json */; };
+		2CE53A32231ED6EA00B3EF19 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE53A31231ED6EA00B3EF19 /* Service.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0838B1A786C760A30AB645A5 /* Pods_NoomStateMachines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoomStateMachines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C2C3736231EDA0F0029816F /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		2CE53A1A231ECF1000B3EF19 /* NoomStateMachines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoomStateMachines.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CE53A1D231ECF1000B3EF19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2CE53A1F231ECF1000B3EF19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2CE53A24231ECF1100B3EF19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2CE53A27231ECF1100B3EF19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2CE53A29231ECF1100B3EF19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CE53A2F231ED6E000B3EF19 /* articles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = articles.json; sourceTree = "<group>"; };
+		2CE53A31231ED6EA00B3EF19 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		8943FD39F8C4C485C5788818 /* Pods-NoomStateMachines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoomStateMachines.debug.xcconfig"; path = "Target Support Files/Pods-NoomStateMachines/Pods-NoomStateMachines.debug.xcconfig"; sourceTree = "<group>"; };
+		A11A012FF95A5F318E7DB530 /* Pods-NoomStateMachines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoomStateMachines.release.xcconfig"; path = "Target Support Files/Pods-NoomStateMachines/Pods-NoomStateMachines.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CE53A17231ECF1000B3EF19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CC22B3D7992CB0854EF5E57 /* Pods_NoomStateMachines.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C8F0EDFA413EF2979D41362 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0838B1A786C760A30AB645A5 /* Pods_NoomStateMachines.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CE53A11231ECF1000B3EF19 = {
+			isa = PBXGroup;
+			children = (
+				2CE53A1C231ECF1000B3EF19 /* NoomStateMachines */,
+				2CE53A1B231ECF1000B3EF19 /* Products */,
+				98A848C90D68B88861CEED8D /* Pods */,
+				1C8F0EDFA413EF2979D41362 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2CE53A1B231ECF1000B3EF19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CE53A1A231ECF1000B3EF19 /* NoomStateMachines.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CE53A1C231ECF1000B3EF19 /* NoomStateMachines */ = {
+			isa = PBXGroup;
+			children = (
+				2CE53A33231ED77D00B3EF19 /* Data */,
+				2CE53A1D231ECF1000B3EF19 /* AppDelegate.swift */,
+				2CE53A1F231ECF1000B3EF19 /* ViewController.swift */,
+				2CE53A24231ECF1100B3EF19 /* Assets.xcassets */,
+				2CE53A26231ECF1100B3EF19 /* LaunchScreen.storyboard */,
+				2CE53A29231ECF1100B3EF19 /* Info.plist */,
+			);
+			path = NoomStateMachines;
+			sourceTree = "<group>";
+		};
+		2CE53A33231ED77D00B3EF19 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2C2C3736231EDA0F0029816F /* Article.swift */,
+				2CE53A2F231ED6E000B3EF19 /* articles.json */,
+				2CE53A31231ED6EA00B3EF19 /* Service.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		98A848C90D68B88861CEED8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8943FD39F8C4C485C5788818 /* Pods-NoomStateMachines.debug.xcconfig */,
+				A11A012FF95A5F318E7DB530 /* Pods-NoomStateMachines.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CE53A19231ECF1000B3EF19 /* NoomStateMachines */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CE53A2C231ECF1100B3EF19 /* Build configuration list for PBXNativeTarget "NoomStateMachines" */;
+			buildPhases = (
+				292D911424B99AFE5799F351 /* [CP] Check Pods Manifest.lock */,
+				2CE53A16231ECF1000B3EF19 /* Sources */,
+				2CE53A17231ECF1000B3EF19 /* Frameworks */,
+				2CE53A18231ECF1000B3EF19 /* Resources */,
+				A139A09AAFFDEDCC459E5F2F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoomStateMachines;
+			productName = NoomStateMachines;
+			productReference = 2CE53A1A231ECF1000B3EF19 /* NoomStateMachines.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CE53A12231ECF1000B3EF19 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Noom Inc.";
+				TargetAttributes = {
+					2CE53A19231ECF1000B3EF19 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = 2CE53A15231ECF1000B3EF19 /* Build configuration list for PBXProject "NoomStateMachines" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2CE53A11231ECF1000B3EF19;
+			productRefGroup = 2CE53A1B231ECF1000B3EF19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CE53A19231ECF1000B3EF19 /* NoomStateMachines */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2CE53A18231ECF1000B3EF19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CE53A30231ED6E000B3EF19 /* articles.json in Resources */,
+				2CE53A28231ECF1100B3EF19 /* LaunchScreen.storyboard in Resources */,
+				2CE53A25231ECF1100B3EF19 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		292D911424B99AFE5799F351 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NoomStateMachines-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A139A09AAFFDEDCC459E5F2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoomStateMachines/Pods-NoomStateMachines-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoomStateMachines/Pods-NoomStateMachines-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoomStateMachines/Pods-NoomStateMachines-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2CE53A16231ECF1000B3EF19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C2C3737231EDA0F0029816F /* Article.swift in Sources */,
+				2CE53A20231ECF1000B3EF19 /* ViewController.swift in Sources */,
+				2CE53A1E231ECF1000B3EF19 /* AppDelegate.swift in Sources */,
+				2CE53A32231ED6EA00B3EF19 /* Service.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2CE53A26231ECF1100B3EF19 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CE53A27231ECF1100B3EF19 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2CE53A2A231ECF1100B3EF19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2CE53A2B231ECF1100B3EF19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CE53A2D231ECF1100B3EF19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8943FD39F8C4C485C5788818 /* Pods-NoomStateMachines.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = NoomStateMachines/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.noom.NoomStateMachines;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2CE53A2E231ECF1100B3EF19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A11A012FF95A5F318E7DB530 /* Pods-NoomStateMachines.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = NoomStateMachines/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.noom.NoomStateMachines;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2CE53A15231ECF1000B3EF19 /* Build configuration list for PBXProject "NoomStateMachines" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CE53A2A231ECF1100B3EF19 /* Debug */,
+				2CE53A2B231ECF1100B3EF19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CE53A2C231ECF1100B3EF19 /* Build configuration list for PBXNativeTarget "NoomStateMachines" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CE53A2D231ECF1100B3EF19 /* Debug */,
+				2CE53A2E231ECF1100B3EF19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2CE53A12231ECF1000B3EF19 /* Project object */;
+}
