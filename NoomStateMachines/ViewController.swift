@@ -13,21 +13,13 @@ import RxFeedback
 import RxDataSources
 import SnapKit
 
-fileprivate struct State {
-    var allArticles: [Article] = []
-    
-    var pageSize: Int = 20
-    var isLoading: Bool = true
-    var canLoadMore: Bool = true
-}
-
 fileprivate let cellIdentifier = "cell"
 fileprivate let infiniteScrollTreshold = CGFloat(75)
 
 class ViewController: UIViewController {
     fileprivate let refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: nil, action: nil)
     fileprivate let tableView = UITableView(frame: .zero)
-    fileprivate let service: Service
+    fileprivate let service: ArticleService
     
     fileprivate let dataSource: RxTableViewSectionedAnimatedDataSource<SectionModel>
     fileprivate let disposeBag = DisposeBag()
@@ -41,7 +33,7 @@ class ViewController: UIViewController {
         return view
     }()
     
-    init(service: Service) {
+    init(service: ArticleService) {
         self.service = service
         self.dataSource = RxTableViewSectionedAnimatedDataSource<SectionModel>(configureCell: { (ds, tv, ip, item) -> UITableViewCell in
             let cell = tv.dequeueReusableCell(withIdentifier: cellIdentifier, for: ip)
@@ -59,8 +51,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let service = self.service
-        let refreshButton = self.refreshButton
         let tableView = self.tableView
         let loaderView = self.loaderView
         
@@ -70,42 +60,18 @@ class ViewController: UIViewController {
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
         
-        let infiniteScrollFeedback: Feedback = react(
-            request: { $0.canInfiniteScroll },
-            effects: { (_: Bool) -> Observable<Event> in
-                return tableView.rx.contentOffset
-                    .map { (contentOffset: CGPoint) -> Bool in
-                        let offsetFromBottom = tableView.contentSize.height - tableView.bounds.height - contentOffset.y
-                        return offsetFromBottom < infiniteScrollTreshold
-                    }
-                    .distinctUntilChanged()
-                    .filter { $0 }
-                    .map { _ in Event.loadMore }
-            }
+        let state = PagingState.system(
+            service: self.service,
+            loadMore: tableView.rx.contentOffset
+                .map { (contentOffset: CGPoint) -> Bool in
+                    let offsetFromBottom = tableView.contentSize.height - tableView.bounds.height - contentOffset.y
+                    return offsetFromBottom < infiniteScrollTreshold
+                }
+                .distinctUntilChanged()
+                .filter { $0 }
+                .map { _ in },
+            refresh: self.refreshButton.rx.tap.asObservable()
         )
-        
-        let loadArticlesFeedback: Feedback = react(
-            request: { $0.canLoadArticles },
-            effects: { (request: LoadArticlesRequest) -> Observable<Event> in
-                return service
-                    .get(from: request.from, limit: request.limit)
-                    .map { .loaded($0) }
-                    .asObservable()
-            }
-        )
-        
-        let refreshFeedback: Feedback = { _ in
-            return refreshButton.rx.tap.map { Event.reload }
-        }
-        
-        let state = Observable
-            .system(
-                initialState: State(),
-                reduce: State.reduce,
-                scheduler: MainScheduler.asyncInstance,
-                feedback: [loadArticlesFeedback, infiniteScrollFeedback, refreshFeedback]
-            )
-            .share(replay: 1, scope: .whileConnected)
         
         state
             .map { [SectionModel(model: "section", items: $0.allArticles)] }
@@ -122,57 +88,6 @@ class ViewController: UIViewController {
             })
             .disposed(by: self.disposeBag)
     }
-}
-
-fileprivate enum Event {
-    case loadMore
-    case loaded([Article])
-    case reload
-}
-
-fileprivate typealias Feedback = (ObservableSchedulerContext<State>) -> Observable<Event>
-
-extension State {
-    static func reduce(state: State, event: Event) -> State {
-        var newState = state
-        switch event {
-        case .loadMore:
-            if newState.canLoadMore {
-                newState.isLoading = true
-            }
-        case .loaded(let articles):
-            newState.allArticles.append(contentsOf: articles)
-            newState.isLoading = false
-            newState.canLoadMore = articles.count >= newState.pageSize
-        case .reload:
-            newState.allArticles = []
-            newState.isLoading = true
-            newState.canLoadMore = true
-        }
-        return newState
-    }
-    
-    var canLoadArticles: LoadArticlesRequest? {
-        if self.isLoading {
-            return LoadArticlesRequest(
-                from: self.allArticles.last?.id,
-                limit: self.pageSize
-            )
-        }
-        return nil
-    }
-    
-    var canInfiniteScroll: Bool? {
-        if self.canLoadMore {
-            return true
-        }
-        return nil
-    }
-}
-
-fileprivate struct LoadArticlesRequest: Equatable {
-    let from: UUID?
-    let limit: Int
 }
 
 extension Article: IdentifiableType {

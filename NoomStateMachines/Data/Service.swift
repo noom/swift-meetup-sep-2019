@@ -11,11 +11,21 @@ import RxSwift
 import SwiftyJSON
 import SwiftDate
 
-class Service {
-    var data: [Article]
+protocol ArticleService {
+    func get(from: UUID?, limit: Int) -> Single<[Article]>
+}
+
+/**
+ Since this class is already using mocked data it is reused for unit tests. In real scenarios one would mock the
+ `ArticleService` protocol for unit tests.
+ */
+class LocalDataArticleService: ArticleService {
+    let data: [Article]
+    let simulateDelay: Bool
     
-    init() {
-        guard let url = Bundle.main.url(forResource: "articles", withExtension: "json"),
+    init(simulateDelay: Bool) {
+        self.simulateDelay = simulateDelay
+        guard let url = Bundle(for: LocalDataArticleService.self).url(forResource: "articles", withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let json = try? JSON(data: data)
             else { fatalError("No data") }
@@ -24,15 +34,16 @@ class Service {
     }
     
     func get(from id: UUID?, limit: Int) -> Single<[Article]> {
-        return Single
-            .deferred {
-                guard let id = id, let startIndex = self.data.firstIndex(where: { $0.id == id })
-                    else { return Single.just(Array(self.data[0..<limit])) }
-                let endIndex = min(startIndex + 1 + limit, self.data.count)
-                return Single.just(Array(self.data[startIndex + 1..<endIndex]))
-            }
-            // Simulate network call delay
-            .delay(.seconds(1), scheduler: MainScheduler.instance)
+        return Single.deferred {
+            guard let id = id, let startIndex = self.data.firstIndex(where: { $0.id == id })
+                else { return Single.just(Array(self.data[0..<limit])) }
+            let endIndex = min(startIndex + 1 + limit, self.data.count)
+            
+            let data = Single.just(Array(self.data[startIndex + 1..<endIndex]))
+            return self.simulateDelay
+                ? data.delay(.seconds(1), scheduler: MainScheduler.instance)
+                : data
+        }
     }
 }
 
